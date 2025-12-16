@@ -1,11 +1,21 @@
-import "bootstrap";
-import "./style.css";
 
+let pronoun = ['the', 'our'];
+let adj = ['great', 'big'];
+let noun = ['jogger', 'racoon'];
+let extensions = ['.com', '.es', '.us', '.io']; 
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+const ul = document.getElementById('domainOutput');
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+for (let pronounWord of pronoun) {
+  for (let adjWord of adj) {
+    for (let nounWord of noun) {
+      for (let extType of extensions) {
+        const domain = pronounWord + adjWord + nounWord + extType;
+
+        const li =document.createElement('li');
+        li.textContent = domain;
+        ul.appendChild(li);
+      }
+    }
+  }
+}
